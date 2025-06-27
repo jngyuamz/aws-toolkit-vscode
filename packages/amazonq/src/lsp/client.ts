@@ -327,7 +327,7 @@ async function onLanguageServerReady(
             } as RenameFilesParams)
         }),
         vscode.workspace.onDidSaveTextDocument((e) => {
-            client.sendNotification('workspace/didSaveTextDocument', {
+            client.sendNotification('textDocument/didSave', {
                 textDocument: {
                     uri: e.uri.fsPath,
                 },
